@@ -1,0 +1,70 @@
+:root {
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-weight: 400;
+  font-family: sans-serif;
+
+  color: black;
+  background-color: white;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+  display: inline-block;
+}
+
+button {
+  outline: none;
+  background: none;
+  border: none;
+  display: inline-block;
+  font-family: inherit;
+}
+
+input {
+  outline: none;
+  display: inline-block;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 30rem minmax(max-content, 1fr);
+  grid-template-rows: 15rem 1fr;
+
+  min-height: 100dvh;
+
+  grid-template-areas:
+    "aside header"
+    "aside main";
+}
+
+.dashboard_header {
+  grid-area: header;
+}
+
+.dashboard_aside {
+  grid-area: aside;
+}
+
+.dashboard_main {
+  grid-area: main;
+}
