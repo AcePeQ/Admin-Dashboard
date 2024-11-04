@@ -1,4 +1,13 @@
 :root {
+  --text-white: #fafafa;
+  --text-dark: #09090b;
+  --text-grey: #52525b;
+
+  --background-white: #f1f5f9;
+  --background-grey: #d1d5db;
+  --background-blue: #0ea5e9;
+
+  --accent: #eab308;
 }
 
 *,
@@ -17,10 +26,38 @@ html {
 body {
   font-size: 1.6rem;
   font-weight: 400;
-  font-family: sans-serif;
+  font-family: "Robot", sans-serif;
 
   color: black;
   background-color: white;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+p,
+span {
+  text-wrap: pretty;
+}
+
+span {
+  display: inline-block;
 }
 
 a:link,
@@ -58,13 +95,68 @@ input {
 }
 
 .dashboard_header {
+  background-color: var(--background-white);
+  color: var(--text-dark);
   grid-area: header;
 }
 
 .dashboard_aside {
+  background-color: var(--background-blue);
+  color: var(--text-white);
   grid-area: aside;
+  padding: 2rem;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, max-content);
+
+  row-gap: 5rem;
+}
+
+.logo_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  svg {
+    width: 6.4rem;
+    height: 6.4rem;
+    path {
+      fill: var(--text-white);
+    }
+  }
+
+  .logo_title {
+    font-size: 3.2rem;
+    font-weight: 600;
+  }
+}
+
+.navigation {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 1.25rem;
+
+  .navigation_item {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+
+  svg {
+    width: 2.8rem;
+    height: 2.8rem;
+
+    path {
+      fill: var(--text-white);
+    }
+  }
 }
 
 .dashboard_main {
+  background-color: var(--background-grey);
+  color: var(--text-dark);
   grid-area: main;
 }
